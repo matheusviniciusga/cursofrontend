@@ -1,18 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
-html {scroll-behavior: smooth;}
-
-body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: auto;
-    background: #f1f1f1;
+html {
+    scroll-behavior: smooth;
 }
 
-header {align-items: center;display: flex;justify-content: space-evenly;background: rgb(28, 96, 151);padding: 50px;}
+body {
+    background: #f1f1f1;
+    font-family: 'Open Sans', sans-serif;
+}
 
-header h1 {color: white;font-size: 40px;}
+header {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(28, 96, 151);
+    padding: 50px;
+}
+
+header h1 {
+    color: white;
+    font-size: 40px;
+}
 
 nav ul {
     background: #d1d1d1;
@@ -24,20 +36,31 @@ nav ul {
     align-items: center;
 }
 
-nav a {color: rgb(28, 96, 151);text-decoration: none;padding: 16px;
+nav a {
+    color: rgb(28, 96, 151);
+    text-decoration: none;
+    padding: 16px;
     display: block;
 }
 
-nav a:hover {background-color: white;cursor: pointer;}
+nav a:hover {
+    background-color: white;
+    cursor: pointer;
+}
 
 .linha {
     padding: 0 20px;
     display: table;
 }
 
-section {float: left;width: 75%;}
+section {
+    float: left;
+    width: 75%;
+}
 
-aside {float: left;width: 25%;
+aside {
+    float: left;
+    width: 25%;
     padding-left: 20px;
 }
 
@@ -68,6 +91,38 @@ input, textarea {
     margin-bottom: 1em;
     font: 1em sans-serif;
     border: 1px solid #999;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: green;
+}
+
+span {
+    position: relative;
+}
+
+input:invalid + span::before, textarea:invalid + span::before {
+    content: '✖';
+    color: red;;
+}
+
+input:valid + span::before {
+    content: '✓';
+    color: green;
+}
+
+input + span::before {
+    position: absolute;
+    left: 380px;
+    top: -42px;
+}
+
+textarea + span::before {
+    position: absolute;
 }
 
 label {
